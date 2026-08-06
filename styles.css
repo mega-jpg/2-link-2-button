@@ -28,14 +28,18 @@ body {
 .wrap {
   width: min(760px, 100%);
   text-align: center;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
 
 .top-logo {
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  width: 340px;
-  height: 120px;
+  width: 510px;
+  height: 240px;
   border: none;
   border-radius: 14px;
   overflow: hidden;
@@ -52,25 +56,38 @@ body {
 
 .actions {
   display: grid;
+  width: 100%;
   grid-template-columns: repeat(2, minmax(0, 1fr));
   gap: 18px;
+  justify-content: center;
 }
 
 .cta {
   position: relative;
   overflow: hidden;
+  isolation: isolate;
   display: block;
+  text-align: center;
   text-decoration: none;
   color: inherit;
   border: 1px solid var(--line);
   border-radius: 18px;
-  padding: 22px 16px;
-  transition: transform 0.2s ease, box-shadow 0.2s ease, border-color 0.2s ease;
+  padding: 24px 18px;
+  transition: transform 0.25s ease, box-shadow 0.25s ease, border-color 0.25s ease;
   background: #fff;
 }
 
 .cta:hover {
-  transform: translateY(-5px);
+  transform: translateY(-6px) scale(1.01);
+}
+
+.cta::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  border-radius: inherit;
+  background: linear-gradient(145deg, rgba(255, 255, 255, 0.5), transparent 45%);
+  z-index: -1;
 }
 
 .cta::after {
@@ -90,11 +107,11 @@ body {
 }
 
 .brand-logo {
-  width: 88px;
-  height: 88px;
-  margin: 0 auto 12px;
+  width: 94px;
+  height: 94px;
+  margin: 0 auto 14px;
   border-radius: 50%;
-  border: 2px solid currentColor;
+  border: 3px solid currentColor;
   display: grid;
   place-items: center;
   font-weight: 800;
@@ -111,22 +128,24 @@ body {
 }
 
 .bonus {
-  font-size: 18px;
-  font-weight: 700;
-  margin-bottom: 8px;
+  font-size: 19px;
+  font-weight: 800;
+  line-height: 1.25;
+  margin-bottom: 9px;
 }
 
 .register {
   color: var(--muted);
-  font-size: 15px;
-  font-weight: 600;
-  letter-spacing: 0.2px;
+  font-size: 14px;
+  font-weight: 700;
+  letter-spacing: 0.35px;
+  text-transform: uppercase;
 }
 
 .cta-gk88 {
   border-color: #ffc4bb;
   background: linear-gradient(180deg, #fffefe 0%, #fff6f3 100%);
-  box-shadow: 0 12px 28px rgba(217, 44, 31, 0.12);
+  box-shadow: 0 14px 28px rgba(217, 44, 31, 0.16);
 }
 
 .cta-gk88 .brand-logo,
@@ -140,13 +159,13 @@ body {
 
 .cta-gk88:hover {
   border-color: var(--accent-1);
-  box-shadow: 0 16px 32px rgba(217, 44, 31, 0.22);
+  box-shadow: 0 20px 36px rgba(217, 44, 31, 0.24);
 }
 
 .cta-6622 {
   border-color: #b9dcff;
   background: linear-gradient(180deg, #fcfeff 0%, #f2f8ff 100%);
-  box-shadow: 0 12px 28px rgba(4, 104, 215, 0.12);
+  box-shadow: 0 14px 28px rgba(4, 104, 215, 0.16);
 }
 
 .cta-6622 .brand-logo,
@@ -191,7 +210,7 @@ body {
 
 .cta-6622:hover {
   border-color: var(--accent-2);
-  box-shadow: 0 16px 32px rgba(4, 104, 215, 0.22);
+  box-shadow: 0 20px 36px rgba(4, 104, 215, 0.24);
 }
 
 @media (max-width: 720px) {
@@ -200,7 +219,11 @@ body {
   }
 
   .top-logo {
-    width: 290px;
-    height: 104px;
+    width: 350px;
+    height: 126px;
+  }
+
+  .cta {
+    padding: 22px 16px;
   }
 }
